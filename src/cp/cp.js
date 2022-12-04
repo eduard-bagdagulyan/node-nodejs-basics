@@ -1,8 +1,8 @@
 import { fork } from 'child_process'
-import { join, resolve } from 'path'
+import { resolve } from 'path'
 
 const spawnChildProcess = async (args) => {
-    const filePath = resolve(join('files', 'script.js'))
+    const filePath = resolve('files', 'script.js')
     fork(filePath, args)
 };
 

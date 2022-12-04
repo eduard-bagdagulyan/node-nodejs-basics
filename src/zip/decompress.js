@@ -1,10 +1,10 @@
-import { join } from 'path';
+import { resolve } from 'path';
 import { createGunzip } from 'zlib';
 import { createReadStream, createWriteStream } from 'fs';
 
 const decompress = async () => {
-    const archivePath = join('files', 'archive.txt.gz')
-    const outputFilePath = join('files', 'fileToCompress.txt')
+    const archivePath = resolve('files', 'archive.txt.gz')
+    const outputFilePath = resolve('files', 'fileToCompress.txt')
 
     const stream = createReadStream(archivePath)
     stream

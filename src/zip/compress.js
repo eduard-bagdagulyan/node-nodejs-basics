@@ -1,10 +1,10 @@
-import { join } from 'path';
+import { resolve } from 'path';
 import { createGzip } from 'zlib';
 import { createReadStream, createWriteStream } from 'fs';
 
 const compress = async () => {
-    const initialFilePath = join('files', 'fileToCompress.txt')
-    const compressedFilePath = join('files', 'archive.txt.gz')
+    const initialFilePath = resolve('files', 'fileToCompress.txt')
+    const compressedFilePath = resolve('files', 'archive.txt.gz')
 
     const stream = createReadStream(initialFilePath)
     stream

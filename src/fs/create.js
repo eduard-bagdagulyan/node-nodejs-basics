@@ -1,8 +1,8 @@
 import { writeFile } from 'fs'
-import { join } from 'path'
+import { resolve } from 'path'
 
 const create = async () => {
-    const filePath = join('files', 'fresh.txt')
+    const filePath = resolve('files', 'fresh.txt')
     const data = 'I am fresh and young'
 
     writeFile(filePath, data, {flag: 'wx'}, (err) => {

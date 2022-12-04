@@ -1,9 +1,9 @@
 import { createReadStream } from 'fs';
 import { createHash } from 'crypto';
-import { join } from 'path';
+import { resolve } from 'path';
 
 const calculateHash = async () => {
-    const filePath = join('files', 'fileToCalculateHashFor.txt')
+    const filePath = resolve('files', 'fileToCalculateHashFor.txt')
     const fd = createReadStream(filePath)
     const hash = createHash('sha256')
     hash.setEncoding('hex')

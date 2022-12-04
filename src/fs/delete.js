@@ -1,8 +1,8 @@
 import { unlink } from 'fs';
-import { join } from 'path';
+import { resolve } from 'path';
 
 const remove = async () => {
-    const fileToRemovePath = join('files', 'fileToRemove.txt')
+    const fileToRemovePath = resolve('files', 'fileToRemove.txt')
 
     unlink(fileToRemovePath, (err) => {
         if (err) throw new Error('FS operation failed')
