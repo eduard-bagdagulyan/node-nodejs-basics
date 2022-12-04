@@ -1,5 +1,9 @@
+import { createReadStream } from 'fs';
+import { join } from 'path';
+
 const read = async () => {
-    // Write your code here 
+    const filePath = join('files', 'fileToRead.txt')
+    createReadStream(filePath).pipe(process.stdout)
 };
 
 await read();
